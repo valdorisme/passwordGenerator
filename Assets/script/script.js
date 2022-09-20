@@ -32,6 +32,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // Creating if statements to ensure required characters are in the password
+
   if (generatePassword.number not in password)
     alert("Your password should contain a number")
 
