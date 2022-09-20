@@ -1,11 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var length = document.querySelector(input[name="length"]);
+var lower = document.querySelector(input[name="lower"]);
+var upper = document.querySelector(input[name="upper"]);
+var number = document.querySelector(input[name="number"]);
+var symbol = document.querySelector(input[name="symbol"]);
+
+// creating a function containing password requirements
+function requirements
 // assignment of numbers and symbols
-var number = '1234567890';
-var symbol = " !"\'()*&+,-./:$%;<=>?@[]^_`{|}#~"
+  number = '1234567890';
+  symbol = " !"\'()*&+,-./:$%;<=>?@[]^_`{|}#~"
 // assignment of uppercase and lowercase letters
-var upper = "QWERTYUIOPASDFGHJKLZXCVBNM"
-var lower = "qwertyuiopasdfghjklzxcvbnm"
+  upper = "QWERTYUIOPASDFGHJKLZXCVBNM"
+  lower = "qwertyuiopasdfghjklzxcvbnm"
 
 
 function generatePassword() {
