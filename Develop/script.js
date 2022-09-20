@@ -34,6 +34,15 @@ function writePassword() {
 
   if (generatePassword.number not in password)
     alert("Your password should contain a number")
+
+  if (generatePassword.symbol not in password)
+    alert("Your password should contain a symbol")
+
+  if (generatePassword.upper not in password)
+    alert("Your password should contain an uppercase letter")
+
+  if (generatePassword.lower not in password)
+    alert("Your password should contain a lowercase letter")
     
   passwordText.value = password;
 
@@ -41,3 +50,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+console.log(writePassword);
+
