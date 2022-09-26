@@ -1,30 +1,33 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate')
 
+// Make four different variables, each consisting of an array of characters
+var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//console.log(lowerCase)
+// Even make the integers a string, so they are easier to manage (0-9)
+  
+var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+//console.log(upperCase)
+  
+var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+//console.log(number)
+  
+var symbol = [' ', '!', '"', '#', '$', '%', '&', '(', ')', 
+'*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', 
+'\'', ']', '^', '_', '`', '{', '|', '}', '~' ];
+
 
 // creating a function containing password requirements
 function generatePassword() {
 
-  // Make four different variables, each consisting of an array of characters
-  var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  //console.log(lowerCase)
-  // Even make the integers a string, so they are easier to manage (0-9)
-  
-  var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  //console.log(upperCase)
-  
-  var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  //console.log(number)
-  
-  var symbol = [' ', '!', '"', '#', '$', '%', '&', '(', ')', 
-  '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', 
-  '\'', ']', '^', '_', '`', '{', '|', '}', '~' ];
+  var character = [];
 
   // assigning password length
   var length = prompt('Password must contain 8-128 characters. How many characters would you like to use?')
-  length = parseFloat(length)
+  console.log(length)
+  //  length = parseFloat(length)
 
-
+  //charLength = character.length
   if (length<8) {
     alert("Password must be at least 8 characters long");
     return "";
@@ -35,23 +38,46 @@ function generatePassword() {
     return "" 
   }
 
-  //Have funtion create random code if length is within defined range
-  else (length>8 & length<128)
-    return String.random([lowerCase, upperCase, number,symbol])
+  var lower = window.confirm('Would you like to add a lower case letter? Click "OK" for YES or click "Cancel" for NO.');
+    if (lower == true) {
+      character = character.concat(lowerCase)
+    }
+
+  var upper = window.confirm('Would you like to add an upper case letter? Click "OK" for YES or click "Cancel" for NO.');
+    if (upper == true) {
+      character = character.concat(upperCase)
+    }
+
+  var num = window.confirm('Would you like to add a number? Click "OK" for YES or click "Cancel" for NO.');
+    if (num == true) {
+      character = character.concat(number)
+    }
+
+  var symb = window.confirm('Would you like to add a symbol? Click "OK" for YES or click "Cancel" for NO.');
+    if (symb == true) {
+      character = character.concat(symbol)
+    }
+  
+  if (character == [0]) {
+    
+  }
+  console.log(character)
+
   
 
+ 
 }
 //console.log(generatePassword)
 
 // Write password to the #password input
 
-function writePassword(values) {
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-  for (var i = 0; i < values; i++) {
+  for (var i = 0; i < value; i++) {
     password += generatePassword();
   }
   return password;
