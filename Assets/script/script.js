@@ -58,9 +58,13 @@ function generatePassword() {
       character = character.concat(symbol)
     }
   
-  if (character == [0]) {
-    
-  }
+  // if (character == [0]) {
+  //  character = lower.charAt(math.floor(math.random(length))
+  // }
+
+  // else {
+  //   character = character.charAt(math.random(length))
+  // }
   console.log(character)
 
   
@@ -75,9 +79,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText = password;
 
-  for (var i = 0; i < value; i++) {
+  for (i = 0; i < password; i++) {
     password += generatePassword();
   }
   return password;
